@@ -1,0 +1,32 @@
+* {
+  text-align: center;
+  font-family: 'VT323', monospace;
+  background-color: #1f202b;
+  color: white;
+}
+
+h1 {
+  font-size: 60pt;
+  background-color: #f4ce00;
+}
+
+h2 {
+  background-color: #f4ce00;
+  font-size: 35pt;
+}
+
+
+.left , .right {
+  height: auto;
+  width: 20%;
+}
+
+#game {
+  width: 60%;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
