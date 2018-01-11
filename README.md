@@ -12,7 +12,7 @@ get the player to other side (to the Water) without colliding with enemies ( Bug
 - player should reach the water.
 
 ## Where to start?
-Follow this link to reach you out there :
+Follow this link to reach you out there : [click here](http://htmlpreview.github.io/?https://github.com/iMishaDev/arcade-game/blob/master/index.html)
 
 ## Tools used to build this game:
 - Object-oriented Javascript.
