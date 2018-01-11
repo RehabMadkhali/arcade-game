@@ -9,10 +9,21 @@ get the player to other side (to the Water) without colliding with enemies ( Bug
 
 ## Game Rules:
 - player should avoid the bugs.
-- player should reach the water.
+- player should reach to the water.
 
 ## Where to start?
-Follow this link to reach you out there : [click here](http://htmlpreview.github.io/?https://github.com/iMishaDev/arcade-game/blob/master/index.html)
+you have to options to reach out to my game:
+- opening **index.html** page in my [GitHub](https://github.com/iMishaDev/arcade-game).
+- **(recommended)** Follow this link to reach you out there : [click here](http://htmlpreview.github.io/?https://github.com/iMishaDev/arcade-game/blob/master/index.html)
+
+## Instructions
+You will use arrow keys to control the player :
+- **Left** arrow will move the player to the left.
+- **Right** arrow will move the player to the right.
+- **Up** arrow will move the player up.
+- **Down** arrow will move the player down.
+
+in case you win or lose, a message will pop up, a congrats message or a game over message. to remove that message and play again you need to press **enter** that will reset the game.
 
 ## Tools used to build this game:
 - Object-oriented Javascript.

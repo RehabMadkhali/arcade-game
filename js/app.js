@@ -3,6 +3,8 @@ var Enemy = function(x, y) {
   this.sprite = 'images/enemy-bug.png';
   this.x = x;
   this.y = y;
+  this.width = 120;
+  this.height = 180;
 
   this.speed = Math.floor(Math.random() * 300 + 100);
 };
@@ -16,7 +18,7 @@ Enemy.prototype.update = function(dt) {
 };
 
 Enemy.prototype.render = function() {
-  ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+  ctx.drawImage(Resources.get(this.sprite), this.x, this.y, this.width  ,this.height);
 };
 
 // Creating Class Player with all needed Functionalities.
@@ -25,6 +27,8 @@ var Player = function() {
   this.sprite = 'images/char-horn-girl.png';
   this.x = 200;
   this.y = 440;
+  this.width = 99;
+  this.height = 170;
   this.alive = true;
   this.win = false;
 };
@@ -78,24 +82,25 @@ Player.prototype.update = function() {
     this.reset();
   }
 
-  // we're gonna need a refrence to the player inside the clouser of the forEach. that's why i declare a global var to that function.
+  // I need a refrence to the player inside the clouser of the forEach. that's why i declare a global var to that function.
   var player = this;
 
   enemies.forEach(function(enemy) {
-    if (player.x >= enemy.x - 30 && player.x <= enemy.x + 30) {
-      if (player.y >= enemy.y - 30 && player.y <= enemy.y + 30) {
+    if ((player.x > enemy.x && player.x < ( player.width  / 3 ) + enemy.x) &&
+        (player.y > enemy.y && player.y < ( player.height / 3 ) + enemy.y)){
+
         player.alive = false;
         document.removeEventListener('keyup', handleKeyUpListenerDuringPlaying);
         document.addEventListener('keyup', handleKeyUpListenerDuringEndOfGame);
         player.reset();
-      }
-    }
+}
+
   });
 };
 
 
 Player.prototype.render = function() {
-  ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+  ctx.drawImage(Resources.get(this.sprite), this.x, this.y, this.width,this.height);
 };
 
 Player.prototype.handleInput = function(e) {
