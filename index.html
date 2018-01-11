@@ -1,48 +1,47 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="UTF-8">
     <title>Game: Frogger</title>
     <link rel="stylesheet" href="css/style.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
-</head>
-<body>
-
-
-  <header>
-    <h1> Classic Arcade Game!</h1>
-  </header>
-
-  <div class="container">
-    <div class="left">
-    <h2> How To Play? </h2>
-      <h3> It's an old classic game, the only thing you need to do is : <br> 1-  press righ to turn right. <br>
-           2- press left to turn left. <br> 3- press up to go up.<br> 4- press down to go down.<br></h3>
-           <h2>Note:</h2> <h3> Becareful! try avoiding colliding with enemies, they are danguoris..
-           they will take your life!. so make sure to go to the other side (to the water) while you're safe!</h3>
+  </head>
+  <body>
+    <header>
+      <h1> Classic Arcade Game!</h1>
+    </header>
+    <div class="container">
+      <div class="left">
+        <h2> How To Play? </h2>
+        <h3> It's an old classic game, the only thing you need to do is : <br> 1-  press righ to turn right. <br>
+          2- press left to turn left. <br> 3- press up to go up.<br> 4- press down to go down.<br>
         </h3>
+        <h2>Note:</h2>
+        <h3> Becareful! try avoiding colliding with enemies, they are danguoris..
+          they will take your life!. so make sure to go to the other side (to the water) while you're safe!
+        </h3>
+        </h3>
+      </div>
+      <div id="game">
+        <script src="js/resources.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/engine.js"></script>
+      </div>
+      <div class="right">
+        <h2> Why this GAME? </h2>
+        <h3> It's my 4th project in Udacity Front-End Nanodegree.
+          I was required to complete an already built in game enviroment
+          by creating the player and enemies (bugs) and do the logical things!
+        </h3>
+        <h2> Resources </h2>
+        <h3> <a href="https://stackoverflow.com/questions/11816431/how-to-add-a-html5-canvas-within-a-div"> Adding Canvas to the centered Div </a>
+          <a href="http://htmlpreview.github.io/?https://github.com/rakan210/Udacity/blob/master/Udacity/Project%234%20ArcadeGame/index.html" >
+          Helped me out to understand how really do the game!</a>
+          <a href="https://github.com/alexsales/frontend-nanodegree-frogger-arcade-game"> Helped me out in writing my README!</a>
+        </h3>
+      </div>
     </div>
-
-    <div id="game">
-      <script src="js/resources.js"></script>
-      <script src="js/app.js"></script>
-      <script src="js/engine.js"></script>
-    </div>
-
-    <div class="right">
-    <h2> Why this GAME? </h2>
-    <h3> It's my 4th project in Udacity Front-End Nanodegree.
-         I was required to complete an already built in game enviroment
-         by creating the player and enemies (bugs) and do the logical things!</h3>
-    <h2> Resources </h2>
-  <h3> <a href="https://stackoverflow.com/questions/11816431/how-to-add-a-html5-canvas-within-a-div"> Adding Canvas to the centered Div </a>
-  <a href="http://htmlpreview.github.io/?https://github.com/rakan210/Udacity/blob/master/Udacity/Project%234%20ArcadeGame/index.html" >
-     Helped me out to understand how really do the game!</a>
-
-     <a href="https://github.com/alexsales/frontend-nanodegree-frogger-arcade-game"> Helped me out in writing my README!</a>  </h3>
-  </div>
-  </div>
-</body>
+  </body>
 </html>
