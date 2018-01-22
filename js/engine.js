@@ -42,6 +42,7 @@ var Engine = (function(global) {
         var now = Date.now(),
             dt = (now - lastTime) / 1000.0;
 
+
         /* Call our update/render functions, pass along the time delta to
          * our update function since it may be used for smooth animation.
          */
@@ -58,28 +59,28 @@ var Engine = (function(global) {
          */
         win.requestAnimationFrame(main);
 
-
-
-                  if(player.win == true){
-                     createMessage("GOOD JOB!", "blue");
+                  if(player.heart === 50){
+                     createMessage("GOOD JOB!", "#f4ce00","Continue Playing!");
                    }
-                   else if (player.alive == false) {
-                     createMessage("GAME OVER!", "red");
+                   else if (player.heart === 0) {
+                      playerLifes.splice(0,1);
+                      player.heart = -1;
                    }
+                   else if(player.heart === -1){
+                       createMessage("GAME OVER!", "red", "Play Again!");
+                   }
+
             }
 
-        function createMessage (message , color ){
+        function createMessage (message , color, content ){
           ctx.font = '30pt "VT323"';
-          ctx.fillStyle = 'rgba(100, 100, 100, 0.5)';
-          ctx.fillRect(80, 200, 350, 150);
+          ctx.fillStyle = '#1f202b';
+          ctx.fillRect(90, 200, 330, 150);
           ctx.fillStyle = color;
-          ctx.shadowBlur = 4;
-          ctx.shadowColor = "rgba(0,0,0,1)";
-          ctx.fillText(message, 190, 250);
-          ctx.font = '20pt "VT323"'
-          ctx.fillStyle = 'black';
-          ctx.shadowBlur = 0;
-          ctx.fillText('Press "Enter" to Play Again! ', 120, 300);
+          ctx.fillText(message, 180, 250);
+          ctx.font = '17pt "VT323"';
+          ctx.fillStyle = 'white';
+          ctx.fillText('Press "Enter" To '+ content, 105, 300);
         }
 
     /* This function does some initial setup that should only occur once,
@@ -117,7 +118,9 @@ var Engine = (function(global) {
         enemies.forEach(function(enemy) {
             enemy.update(dt);
         });
+
         player.update();
+
     }
 
     /* This function initially draws the "game level", it will then call
@@ -162,7 +165,17 @@ var Engine = (function(global) {
             }
         }
 
+        ctx.font = '25pt "VT323"';
+        ctx.fillStyle = '#f4ce00';
+        ctx.fillRect(0, 0, 505, 50);
+        ctx.fillStyle = 'white';
+        ctx.fillText("life chances:", 10, 30);
+        ctx.fillText(player.heart, 420, 30);
+
+
         renderEntities();
+
+
     }
 
     /* This function is called by the render function and is called on each game
@@ -173,11 +186,22 @@ var Engine = (function(global) {
         /* Loop through all of the objects within the allEnemies array and call
          * the render function you have defined.
          */
+
+
         enemies.forEach(function(enemy) {
             enemy.render();
         });
 
+        playerLifes.forEach(function(player) {
+            player.render();
+        });
+
+
+        star.forEach(function(star) {
+            star.render();
+        });
         player.render();
+        heart.render();
 
     }
 
@@ -199,7 +223,8 @@ var Engine = (function(global) {
         'images/grass-block.png',
         'images/enemy-bug.png',
         'images/char-horn-girl.png',
-        'images/winning.png'
+        'images/Star.png',
+        'images/pixel-heart.png'
     ]);
     Resources.onReady(init);
 

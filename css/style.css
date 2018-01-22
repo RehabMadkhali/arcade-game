@@ -4,24 +4,42 @@
      background-color: #1f202b;
      color: white;
 }
+
  h1 {
      font-size: 60pt;
      background-color: #f4ce00;
 }
+
  h2 {
      background-color: #f4ce00;
      font-size: 35pt;
 }
+
+ h3 {
+     font-weight: lighter;
+     text-align: left;
+}
+
  .left , .right {
      height: auto;
      width: 20%;
 }
+
  #game {
      width: 60%;
 }
+
  .container {
      display: flex;
      flex-wrap: wrap;
      width: 100%;
 }
- 
+
+ img {
+     width: 20px;
+     height: 15px;
+}
+
+ strong {
+     color: #f4ce00;
+}
